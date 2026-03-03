@@ -12,21 +12,18 @@ const continueWatchingConfig = {
   Recruiter: [
     { title: "Music", imgSrc: "https://picsum.photos/id/1025/300/200", link: "/music" },
     { title: "Reading", imgSrc: "https://picsum.photos/id/1026/300/200", link: "/reading" },
-    //{ title: "Blogs", imgSrc: "https://picsum.photos/id/1027/300/200", link: "/blogs" },
     { title: "What Excites Me", imgSrc: "https://picsum.photos/seed/excited/300/200", link: "/what-excites-me" },
     { title: "Contact Me", imgSrc: "https://picsum.photos/id/1029/300/200", link: "/contact-me" }
   ],
   Founder: [
     { title: "Music", imgSrc: "https://picsum.photos/id/1025/300/200", link: "/music" },
     { title: "Reading", imgSrc: "https://picsum.photos/id/1026/300/200", link: "/reading" },
-    //{ title: "Blogs", imgSrc: "https://picsum.photos/id/1027/300/200", link: "/blogs" },
     { title: "What Excites Me", imgSrc: "https://picsum.photos/seed/excited/300/200", link: "/what-excites-me" },
     { title: "Certifications", imgSrc: "https://picsum.photos/id/1028/300/200", link: "/certifications" },
     { title: "Contact Me", imgSrc: "https://picsum.photos/id/1029/300/200", link: "/contact-me" }
   ],
   Stalker: [
     { title: "Reading", imgSrc: "https://picsum.photos/id/1026/300/200", link: "/reading" },
-    //{ title: "Blogs", imgSrc: "https://picsum.photos/id/1027/300/200", link: "/blogs" },
     { title: "What Excites Me", imgSrc: "https://picsum.photos/seed/excited/300/200", link: "/what-excites-me" },
     { title: "Contact Me", imgSrc: "https://picsum.photos/id/1029/300/200", link: "/contact-me" }
   ],
