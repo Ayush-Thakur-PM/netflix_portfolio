@@ -14,5 +14,5 @@ export const staticProfileBanner: ProfileBanner = {
     // opens your resume directly in a new tab.
     url: '/Ayush%20Thakur%20Resume.pdf',
   },
-  linkedinLink: 'https://www.linkedin.com/in/ayush-thakur',
+  linkedinLink: 'https://www.linkedin.com/in/ayush-thakur-',
 };
