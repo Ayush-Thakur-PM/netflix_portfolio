@@ -1,6 +1,8 @@
 // queries/getProfileBanner.ts
 import datoCMSClient from './datoCMSClient';
+import { getDatoCmsToken } from './getDatoCmsToken';
 import { ProfileBanner } from '../types';
+import { staticProfileBanner } from '../data/profileBanner';
 
 const GET_PROFILE_BANNER = `
  {
@@ -19,7 +21,9 @@ const GET_PROFILE_BANNER = `
 `;
 
 export async function getProfileBanner(): Promise<ProfileBanner> {
+  const useStatic =
+    !getDatoCmsToken() || process.env.REACT_APP_USE_STATIC_DATA === 'true';
+  if (useStatic) return staticProfileBanner;
   const data = await datoCMSClient.request<{ profilebanner: ProfileBanner }>(GET_PROFILE_BANNER);
-  console.log("🚀 ~ getProfileBanner ~ data:", data)
   return data.profilebanner;
 }

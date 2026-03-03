@@ -28,6 +28,12 @@
   cursor: pointer;
 }
 
+.project-image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
 .project-image {
   width: 100%;
   height: 200px;
@@ -40,21 +46,57 @@
   transform: scale(1.05);
 }
 
+.project-type-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 .project-details {
   padding: 20px;
 }
 
 .project-details h3 {
   font-size: 1.2rem;
-  color: #e74e56;
-  margin-bottom: 10px;
   color: #e50914;
+  margin-bottom: 10px;
+}
+
+.project-role {
+  display: inline-block;
+  background: #e50914;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .project-details p {
   font-size: 0.8rem;
   margin-bottom: 15px;
   line-height: 1.2rem;
+}
+
+.project-outcome {
+  font-style: italic;
+  color: #b3b3b3;
+  font-size: 0.75rem;
+  margin-bottom: 10px;
+  line-height: 1.3rem;
 }
 
 .tech-used {
@@ -86,4 +128,85 @@
 .tech-badge svg {
   margin-right: 5px;
   font-size: 1.2rem;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 15px;
+  padding: 8px 16px;
+  background: #e50914;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(229, 9, 20, 0.3);
+}
+
+.project-link:hover {
+  background: #f40612;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(229, 9, 20, 0.5);
+}
+
+.project-link svg {
+  font-size: 0.75rem;
+}
+
+/* Loading skeleton styles */
+.project-card-skeleton {
+  background: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeInUp 0.5s forwards ease-in-out;
+  animation-delay: var(--delay);
+}
+
+.skeleton-image {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(90deg, #2c2c2c 25%, #3a3a3a 50%, #2c2c2c 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+.skeleton-content {
+  padding: 20px;
+}
+
+.skeleton-line {
+  height: 12px;
+  background: linear-gradient(90deg, #2c2c2c 25%, #3a3a3a 50%, #2c2c2c 75%);
+  background-size: 200% 100%;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  animation: loading 1.5s infinite;
+}
+
+.skeleton-line.short {
+  width: 60%;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

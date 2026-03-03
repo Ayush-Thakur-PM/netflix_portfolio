@@ -1,0 +1,163 @@
+.philosophy-container {
+  padding: 120px 20px 80px;
+  background-color: #141414;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* ── Section 1: Methodology ── */
+.philosophy-methodology {
+  max-width: 760px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+.philosophy-section-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #e50914;
+  margin-bottom: 20px;
+}
+
+.philosophy-quote {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #e5e5e5;
+  font-style: italic;
+  border-left: 4px solid #e50914;
+  padding: 20px 30px;
+  margin: 0;
+  background: #1e1e1e;
+  border-radius: 0 12px 12px 0;
+  text-align: left;
+}
+
+/* ── Section 2: Growth / Capability Cards ── */
+.philosophy-growth {
+  max-width: 1000px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+.philosophy-heading {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.philosophy-subheading {
+  font-size: 1rem;
+  color: #b3b3b3;
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0 auto 40px;
+}
+
+.capability-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.capability-card {
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 24px 20px;
+  border-top: 3px solid #e50914;
+  text-align: left;
+  opacity: 0;
+  animation: fadeInUp 0.5s forwards ease-in-out;
+  animation-delay: var(--delay);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.capability-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(229, 9, 20, 0.25);
+}
+
+.capability-icon {
+  font-size: 1.6rem;
+  color: #e50914;
+  margin-bottom: 14px;
+}
+
+.capability-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 10px;
+}
+
+.capability-description {
+  font-size: 0.85rem;
+  color: #b3b3b3;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Section 3: Closing Panel ── */
+.philosophy-closing {
+  background: #1e1e1e;
+  border-radius: 16px;
+  padding: 48px 40px;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid rgba(229, 9, 20, 0.2);
+}
+
+.philosophy-closing-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #e50914;
+  margin-bottom: 16px;
+}
+
+.philosophy-closing-text {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ── Animation ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .capability-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .capability-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .philosophy-quote {
+    font-size: 1rem;
+    padding: 16px 20px;
+  }
+
+  .philosophy-heading {
+    font-size: 1.5rem;
+  }
+
+  .philosophy-closing {
+    padding: 32px 20px;
+  }
+}
