@@ -5,9 +5,10 @@ import './Reading.css';
 import atomicHabits from '../images/atomic_habits.jpg';
 import richDadPoorDad from '../images/rich_dad_poor_dad.jpg';
 import alchemist from '../images/alchemist.jpg';
-import eatThatFrog from '../images/eat_that_frog.jpg';
-import vijayanikiAidhuMetlu from '../images/vijayaniki_aidu_metlu.jpg';
-import venneloAdapilla from '../images/vennelo_adapilla.jpeg';
+import zerotoone from '../images/zero to one.jpg';
+import themomtest from '../images/the mom test.jpg';
+import theleanstartup from '../images/the lean startup.png';
+import theartofwar from '../images/the-art-of-war.jpg';
 
 const books = [
   {
@@ -29,22 +30,28 @@ const books = [
     description: "A magical journey of following one's dreams.",
   },
   {
-    title: "Eat That Frog",
-    author: "Brian Tracy",
-    imgSrc: eatThatFrog,
-    description: "A motivational book on overcoming procrastination.",
+    title: "Zero to one",
+    author: "Peter Thiel",
+    imgSrc: zerotoone,
+    description: "Develops a mindset for creating, not competing, in business.",
   },
   {
-    title: "Vijayaniki Aidhu Metlu",
-    author: "Yandamoori Veerendranath",
-    imgSrc: vijayanikiAidhuMetlu,
-    description: "An inspirational Telugu book for personal growth.",
+    title: "The MoM Test",
+    author: "John Mullins",
+    imgSrc: themomtest,
+    description: "A no-nonsense guide to asking real people better questions.",
   },
   {
-    title: "Vennelo Adapilla",
-    author: "Yandamoori Veerendranath",
-    imgSrc: venneloAdapilla,
-    description: "A classic Telugu romantic novel that touches the heart.",
+    title: "The Lean Startup",
+    author: "Eric Ries",
+    imgSrc: theleanstartup,
+    description: "A no-fluff guide to building a startup by rapidly testing ideas with real customers so you don't waste years on something nobody wants.",
+  },
+  {
+    title: "The Art of War",
+    author: "Sun Tzu",
+    imgSrc: theartofwar,
+    description: "A timeless guide to strategy and leadership.",
   },
 ];
 

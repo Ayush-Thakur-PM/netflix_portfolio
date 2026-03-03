@@ -1,17 +1,19 @@
 // getDatoCmsToken.ts
+// Returns the DatoCMS API token for the current hostname.
+// When no token is set (e.g. default/localhost), the app uses static resume data instead.
 
 export const getDatoCmsToken = (): string => {
+  if (typeof window === 'undefined') return process.env.REACT_APP_DATOCMS_TOKEN ?? '';
   const hostname = window.location.hostname;
 
   switch (hostname) {
     case 'ror.sumanthsamala.com':
     case 'sumanthsamala.com':
     case 'ror.localhost':
-    case 'localhost':
+    case 'java.localhost':
       return process.env.REACT_APP_DATOCMS_ROR_TOKEN ?? '';
 
     case 'java.sumanthsamala.com':
-    case 'java.localhost':
       return process.env.REACT_APP_DATOCMS_JAVA_TOKEN ?? '';
 
     case 'frontend.sumanthsamala.com':
@@ -22,7 +24,9 @@ export const getDatoCmsToken = (): string => {
     case 'node.localhost':
       return process.env.REACT_APP_DATOCMS_NODE_TOKEN ?? '';
 
+    case 'localhost':
     default:
-      throw new Error(`No DatoCMS token configured for hostname: ${hostname}`);
+      // Use single token for this portfolio or empty to fall back to static data
+      return process.env.REACT_APP_DATOCMS_TOKEN ?? '';
   }
 };

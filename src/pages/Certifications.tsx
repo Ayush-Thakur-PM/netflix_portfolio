@@ -14,33 +14,65 @@ const iconData: { [key: string]: JSX.Element } = {
 const Certifications: React.FC = () => {
 
   const [certifications, setCertifications] = useState<Certification[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => { 
     async function fetchCertifications() {
-      const data = await getCertifications();
-      setCertifications(data);
+      try {
+        const data = await getCertifications();
+        setCertifications(data);
+      } catch (error) {
+        console.error('Error fetching certifications:', error);
+      } finally {
+        setLoading(false);
+      }
     }
 
     fetchCertifications();
   }, []);
 
-  if (certifications.length === 0) return <div>Loading...</div>;
+  if (loading) {
+    return (
+      <div className="certifications-container">
+        <div className="certifications-grid">
+          {[1, 2].map((i) => (
+            <div key={i} className="certification-card-skeleton" style={{ '--delay': `${i * 0.2}s` } as React.CSSProperties}>
+              <div className="skeleton-icon"></div>
+              <div className="skeleton-line"></div>
+              <div className="skeleton-line short"></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="certifications-container">
       <div className="certifications-grid">
         {certifications.map((cert, index) => (
-          <a href={cert.link} key={index} target="_blank" rel="noopener noreferrer" className="certification-card" style={{ '--delay': `${index * 0.2}s` } as React.CSSProperties}>
-            <div className="certification-content">
-              <div className="certification-icon">{iconData[cert.iconName] || <FaUniversity />}</div>
-              <h3>{cert.title}</h3>
-              <p>{cert.issuer}</p>
-              {cert.issuedDate && <span className="issued-date">Issued {cert.issuedDate}</span>}
+          cert.link ? (
+            <a href={cert.link} key={index} target="_blank" rel="noopener noreferrer" className="certification-card" style={{ '--delay': `${index * 0.2}s` } as React.CSSProperties}>
+              <div className="certification-content">
+                <div className="certification-icon">{iconData[cert.iconName] || <FaUniversity />}</div>
+                <h3>{cert.title}</h3>
+                <p>{cert.issuer}</p>
+                {cert.issuedDate && <span className="issued-date">Issued {cert.issuedDate}</span>}
+              </div>
+              <div className="certification-link animated-icon">
+                <FaExternalLinkAlt />
+              </div>
+            </a>
+          ) : (
+            <div key={index} className="certification-card" style={{ '--delay': `${index * 0.2}s` } as React.CSSProperties}>
+              <div className="certification-content">
+                <div className="certification-icon">{iconData[cert.iconName] || <FaUniversity />}</div>
+                <h3>{cert.title}</h3>
+                <p>{cert.issuer}</p>
+                {cert.issuedDate && <span className="issued-date">Issued {cert.issuedDate}</span>}
+              </div>
             </div>
-            <div className="certification-link animated-icon">
-              <FaExternalLinkAlt />
-            </div>
-          </a>
+          )
         ))}
       </div>
     </div>

@@ -31,6 +31,10 @@ export interface Project {
   description: string;
   techUsed: string;
   image: { url: string };
+  role?: string;
+  outcome?: string;
+  link?: string;
+  projectType?: 'Case Study' | 'Product Work';
 }
 
 export interface Certification {
@@ -50,6 +54,7 @@ export interface ContactMe {
   linkedinLink: string;
   email: string;
   phoneNumber: string;
+  location?: string;
 }
 
 export interface Skill { 

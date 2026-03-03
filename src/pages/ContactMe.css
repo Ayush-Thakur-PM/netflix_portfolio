@@ -21,11 +21,12 @@
 }
 
 .badge-avatar {
-  width: 60px;
-  height: 60px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   margin-right: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
 }
 
 .badge-content {
@@ -136,6 +137,14 @@
   color: #ff9900;
   animation: swing 1s infinite ease-in-out;
 }
+.contact-fun {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #e6e6e6;
+}
 
 /* Animations */
 @keyframes fadeIn {
@@ -149,5 +158,21 @@
   }
   50% {
     transform: rotate(30deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .linkedin-badge-custom {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .badge-avatar {
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+
+  .badge-content {
+    text-align: center;
   }
 }

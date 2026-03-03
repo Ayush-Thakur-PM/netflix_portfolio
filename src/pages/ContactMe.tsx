@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './ContactMe.css';
-import profilePic from '../images/sumanth.jpeg';
-import { FaEnvelope, FaPhoneAlt, FaCoffee, FaLinkedin } from 'react-icons/fa';
+// Use a static local avatar so the contact card image stays in sync across environments.
+import profilePic from '../images/ayush.png';
+import { FaEnvelope, FaPhoneAlt, FaCoffee, FaLinkedin, FaMapMarkerAlt } from 'react-icons/fa';
 import { ContactMe as IContactMe } from '../types';
 import { getContactMe } from '../queries/getContactMe';
 
 const ContactMe: React.FC = () => {
 
-  const [userData, setUserData] = useState<IContactMe>()
+  const [userData, setUserData] = useState<IContactMe>();
 
   useEffect(() => {
     async function fetchUserData() {
@@ -23,7 +24,11 @@ const ContactMe: React.FC = () => {
   return (
     <div className="contact-container">
       <div className="linkedin-badge-custom">
-        <img src={profilePic} alt="Sumanth Samala" className="badge-avatar" />
+        <img
+          src={profilePic}
+          alt={userData.name}
+          className="badge-avatar"
+        />
         <div className="badge-content">
           <h3 className="badge-name">{userData?.name}</h3>
           <p className="badge-title">{userData.title}</p>
@@ -57,6 +62,12 @@ const ContactMe: React.FC = () => {
             {userData.phoneNumber}
           </a>
         </div>
+        {userData.location && (
+          <div className="contact-item">
+            <FaMapMarkerAlt className="contact-icon" />
+            <span className="contact-link">{userData.location}</span>
+          </div>
+        )}
         <div className="contact-fun">
           <p>Or catch up over a coffee ☕</p>
           <FaCoffee className="coffee-icon" />

@@ -1,0 +1,16 @@
+<svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ivyHomesTitle">
+  <title id="ivyHomesTitle">Ivy Homes logo</title>
+  <!-- Simple, high-contrast pill background to keep things readable -->
+  <rect width="120" height="40" rx="10" fill="#0f172a" />
+  <!-- Company name in warm accent color for visual emphasis -->
+  <text
+    x="16"
+    y="25"
+    fill="#fbbf24"
+    font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    font-size="16"
+    font-weight="600"
+  >
+    Ivy Homes
+  </text>
+</svg>
