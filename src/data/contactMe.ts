@@ -16,7 +16,7 @@ export const staticContactMe: ContactMe = {
   summary:
     'Product Manager with 5+ years building and scaling 0→1 products across proptech, edtech, and consumer startups. Strong at identifying high-conviction user problems, designing GTM-led solutions, and driving growth through fast, iterative execution.',
   companyUniversity: 'Building products at the intersection of growth and experience',
-  linkedinLink: 'https://www.linkedin.com/in/ayush-thakur',
+  linkedinLink: 'https://www.linkedin.com/in/ayush-thakur-',
   email: 'tayush30@gmail.com',
   phoneNumber: '9399370279',
   location: 'Bangalore, India',
